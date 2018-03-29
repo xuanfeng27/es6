@@ -3,11 +3,11 @@
  */
 import React,{Component}from 'react';
 import style from '../css/Swipe.css'
-import { deepClone } from '../util'
+import { deepClone,quickSort } from '../util'
 
+let aaa = quickSort([1,2,4,8,3,1])
+console.log(aaa)
 
-console.log('obj',obj)
-console.log('o',o)
 
 
 const log = console.log.bind(console)

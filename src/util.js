@@ -9,7 +9,22 @@ const deepClone = (obj) =>{
     return o;
 }
 
+const quickSort = (arr)=>{
+    if(arr.length <=1){
+        return arr
+    }
+    let midIdx = Math.floor(arr.length/2);
+    let mid = arr.splice(midIdx,1)[0];
+    let left = [],right = [];
+    for(let i=0,len=arr.length;i<len;i++){
+        if(arr[i]>mid){
+            right.push(arr[i])
+        }else {
+            left.push(arr[i])
+        }
+    }
+    return quickSort(left).concat(mid,quickSort(right))
+}
 
 
-
-export { deepClone }
+export { deepClone ,quickSort}
