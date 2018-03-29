@@ -1,0 +1,7 @@
+### Example user template template
+### Example user template
+
+.idea
+*.iml
+node_modules/
+out
