@@ -3,11 +3,13 @@
  */
 import React,{Component}from 'react';
 import style from '../css/Swipe.css'
-import { deepClone,quickSort } from '../util'
+import { deepClone,quickSort, ajax, foo } from '../util'
 
-let aaa = quickSort([1,2,4,8,3,1])
-console.log(aaa)
 
+const url = 'http://rest.learncode.academy/api/reacttest/tweets'
+ajax('GET',url).then(function (rlt) {
+    console.log(rlt)
+})
 
 
 const log = console.log.bind(console)
@@ -34,8 +36,6 @@ class Swipe extends Component{
             }
         }
     }
-
-
 
     render(){
       return(

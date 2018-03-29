@@ -26,5 +26,39 @@ const quickSort = (arr)=>{
     return quickSort(left).concat(mid,quickSort(right))
 }
 
+const ajax = (type,url)=>{
 
-export { deepClone ,quickSort}
+    const P = new Promise((reslove,reject)=>{
+        const xhr = new XMLHttpRequest();
+        const handle = function () {
+            if (this.readyState !== 4) {
+                return;
+            }
+            if(xhr.readyState==4&&xhr.status==200){
+                reslove(xhr.response)
+            }else {
+                reject(new Error('sss'))
+            }
+        }
+        xhr.open(type,url,true)
+        xhr.onreadystatechange = handle;
+        xhr.send(null)
+    })
+    return P;
+}
+
+const foo=(function () {
+    var secret = 'secret';
+    return {
+        get_secret:function () {
+            return secret
+        },
+        new_secret:function (new_secret) {
+            secret = new_secret;
+        }
+    }
+}())
+
+
+
+export { deepClone ,quickSort, ajax ,foo}
