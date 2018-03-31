@@ -59,6 +59,13 @@ const foo=(function () {
     }
 }())
 
-
+//@decorate
+//class A {}
+//等价于
+//class A {}
+//A=decorate(A)||A
+//修饰器是一个对类进行处理的函数，修饰器函数的第一个参数，就是所要修饰的目标类；是在代码编译阶段执行的函数；
+/*<input type="button" value="Click me" onclick="alert(clicked)" />
+ 在HTML中指定事件处理程序有两个缺点，一是存在时间差，如果页面已经出现了HTML元素，但是js还没加载完，这时候就会报错。还有就是会造成js代码与HTML代码耦合。*/
 
 export { deepClone ,quickSort, ajax ,foo}
