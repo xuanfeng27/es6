@@ -26,6 +26,16 @@ const quickSort = (arr)=>{
     return quickSort(left).concat(mid,quickSort(right))
 }
 
+const quchong = (arr)=>{
+    let a = [];
+    for(let i= 0;i< arr.length;i++){
+        if(a.indexOf(arr[i])===-1){
+            a.push(arr[i])
+        }
+    }
+    return a
+}
+
 const ajax = (type,url)=>{
 
     const P = new Promise((reslove,reject)=>{
@@ -68,4 +78,4 @@ const foo=(function () {
 /*<input type="button" value="Click me" onclick="alert(clicked)" />
  在HTML中指定事件处理程序有两个缺点，一是存在时间差，如果页面已经出现了HTML元素，但是js还没加载完，这时候就会报错。还有就是会造成js代码与HTML代码耦合。*/
 
-export { deepClone ,quickSort, ajax ,foo}
+export { deepClone ,quickSort, ajax ,foo,quchong}
